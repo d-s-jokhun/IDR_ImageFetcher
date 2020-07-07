@@ -88,39 +88,49 @@ def IDR_ImageFetcher (dwnld_args):
     
 
 
-# In[2]:
+# In[10]:
 
 
-# # Provide the compound/s and channel/s of interest
-# CompoundsOfInterest=['paracetamol', 'caffeine']
-# ChannelsOfInterest=['Hoechst', 'ERSyto'] 
-# # ChannelsOfInterest=['Hoechst', 'ERSyto', 'ERSytoBleed', 'Ph_golgi', 'Mito'] 
+Use_as_Downloader = False
 
 
-# In[3]:
+# In[11]:
 
 
-# # Provide the idx_file which maps CompoundsOfInterest to specific plates
-# # Set idx_file to None in order to download idx_file from IDR's github
-# idx_file = './idr0016-screenA-annotation.csv'
-# # idx_file = None
-
-# # Provide the location where the files are to be downloaded
-# Local_ImgPath = os.path.abspath(r'\\fs9.nus.edu.sg\bie\MBELab\jokhun\Pro 1\U2OS small mol screening\folder')
+if Use_as_Downloader:
+    # Provide the compound/s and channel/s of interest as lists
+    CompoundsOfInterest=['chlorphenamine']
+    ChannelsOfInterest=['Hoechst'] 
+    # ChannelsOfInterest=['Hoechst', 'ERSyto', 'ERSytoBleed', 'Ph_golgi', 'Mito'] 
 
 
-# In[7]:
+# In[12]:
 
 
-# # Checking which all files have to be downloaded
-# Targets, dwnld_args = IDR_ImgAvailChk(CompoundsOfInterest, ChannelsOfInterest, Local_ImgPath, idx_file)
+if Use_as_Downloader:
+    # Provide the idx_file which maps CompoundsOfInterest to specific plates
+    # Set idx_file to None in order to download idx_file from IDR's github
+    idx_file = './idr0016-screenA-annotation.csv'
+    # idx_file = None
+
+    # Provide the location where the files are to be downloaded
+    Local_ImgPath = os.path.abspath(r'\\fs9.nus.edu.sg\bie\MBELab\jokhun\Pro 1\U2OS small mol screening\RawImages')
 
 
-# In[ ]:
+# In[13]:
 
 
-# # Downloading the files
-# IDR_ImageFetcher (dwnld_args)
+if Use_as_Downloader:
+    # Checking which all files have to be downloaded
+    Targets, dwnld_args = IDR_ImgAvailChk(CompoundsOfInterest, ChannelsOfInterest, Local_ImgPath, idx_file)
+
+
+# In[14]:
+
+
+if Use_as_Downloader:
+    # Downloading the files
+    IDR_ImageFetcher (dwnld_args)
 
 
 # In[ ]:
