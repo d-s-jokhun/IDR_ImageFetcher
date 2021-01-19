@@ -99,8 +99,8 @@ Use_as_Downloader = False
 
 if Use_as_Downloader:
     # Provide the compound/s and channel/s of interest as lists
-    CompoundsOfInterest=['chlorphenamine']
-    ChannelsOfInterest=['Hoechst'] 
+    CompoundsOfInterest=selected_classes+['Cdk2/5 inhibitor','mammea A/BA']#['chlorphenamine','paracetamol']
+    ChannelsOfInterest=['ERSytoBleed', 'Ph_golgi'] 
     # ChannelsOfInterest=['Hoechst', 'ERSyto', 'ERSytoBleed', 'Ph_golgi', 'Mito'] 
 
 
@@ -114,7 +114,7 @@ if Use_as_Downloader:
     # idx_file = None
 
     # Provide the location where the files are to be downloaded
-    Local_ImgPath = os.path.abspath(r'\\fs9.nus.edu.sg\bie\MBELab\jokhun\Pro 1\U2OS small mol screening\RawImages')
+    Local_ImgPath = os.path.abspath(r'/MBELab/jokhun/Pro 1/U2OS small mol screening/RawImages')
 
 
 # In[13]:
